@@ -1,0 +1,23 @@
+.podval{
+    font-size: 1rem;
+    border: 0px solid blue;
+    height: 10rem;
+    border-top: 10.5rem;
+    border-bottom: 5.5rem;
+    /* border-left: ; */
+    /* box-shadow: inset; */
+    color: blue;
+    background-color: aqua;
+}
+.row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.row-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.row-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}

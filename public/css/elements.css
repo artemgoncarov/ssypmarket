@@ -1,0 +1,222 @@
+:root {
+    --size-0: 0;
+}
+
+:root {
+    --size-1: 1rem;
+}
+
+:root {
+    --size-2: 2rem;
+}
+
+:root {
+    --size-3: 3rem;
+}
+
+:root {
+    --size-10: 10rem
+}
+
+:root {
+    --text-1: 1rem;
+}
+
+:root {
+    --text-2: 2rem;
+}
+
+:root {
+    --text-3: 3rem;
+}
+
+:root {
+    --radius: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+.input {
+    border-radius: var(--radius);
+    border: 1px solid var(--outline);
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    max-width: 400px;
+    /* size: --size-1; */
+}
+
+.textarea {
+    font-size: 1rem;
+}
+
+.button {
+    color: var(--primary);
+    height: var(--size-3);
+    font-size: var(--size-1);
+    width: 20rem;
+    border: 1px solid var(--tertiary);
+}
+
+/*-----------------------------------
+BUTTON
+------------------------------ */
+.b-1,
+.b-2,
+.b-3 {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none !important;
+    border-radius: 10px !important;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms ease-in-out;
+    border: 1px solid transparent;
+}
+
+.b-1:focus,
+.b-2:focus,
+.b-3:focus,
+.b-1:focus-visible,
+.b-2:focus-visible,
+.b-3:focus-visible {
+    outline: none !important;
+}
+
+.b-1 {
+    font-size: var(--text-1) !important;
+    padding: calc(0.5*var(--text-1)) calc(var(--text-1) + 5px);
+}
+
+.b-2 {
+    font-size: var(--text-2) !important;
+    padding: calc(0.5*var(--text-2)) calc(var(--text-2) + 5px);
+}
+
+.b-3 {
+    font-size: var(--text-3) !important;
+    padding: calc(0.5*var(--text-3)) calc(var(--text-3) + 5px);
+}
+
+.b-success {
+    pointer-events: none !important;
+    cursor: auto !important;
+    background-color: var(--success) !important;
+    color: var(--on-success) !important;
+    border: 1px solid var(--success) !important;
+}
+
+.b-primary {
+    background-color: var(--primary) !important;
+    color: var(--on-primary) !important;
+    border: 1px solid var(--primary) !important;
+}
+.b-primary:hover {
+    box-shadow: #0f467a87 0 3px 4px 0;
+}
+
+.b-outline:hover {
+    box-shadow: #00000029 0 3px 4px 0;
+}
+
+.b-secondary:hover {
+    box-shadow: rgba(0, 0, 0, 0.53) 0 3px 4px 0;
+}
+
+.b-tertiary:hover {
+    box-shadow: rgba(6, 132, 146, 0.46) 0 3px 4px 0;
+}
+
+.b-1:active,
+.b-2:active,
+.b-3:active {
+    box-shadow: inset #0000002e 5px 5px 15px 0px !important;
+    border: 1px solid #0000002e !important;
+    outline: none;
+}
+
+.b-secondary {
+    background-color: var(--secondary) !important;
+    color: var(--on-primary) !important;
+    border: 1px solid var(--secondary) !important;
+}
+
+.b-tertiary {
+    background-color: var(--tertiary) !important;
+    color: var(--on-tertiary) !important;
+    border: 1px solid var(--tertiary) !important;
+}
+
+.b-outline {
+    background-color: var(--background) !important;
+    color: var(--on-background) !important;
+    border: 1px solid var(--outline) !important;
+}
+
+/* сайт */
+#content {
+    min-height: 700px;
+
+}
+
+#header {
+    width: 100%;
+    background: var(--secondary);
+    position: fixed;
+    top: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background);
+}
+
+#footer {
+    width: 100%;
+    background: #021446;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+
+.name-site {
+    color: #FFFFFF;
+    font-weight: 900;
+}
+
+.text-footer {
+    color: white;
+    font-weight: 700;
+}
+
+/* сайт */
+
+.table {
+	width: 100%;
+	border: 1px solid var(--outline);
+	border-collapse: collapse; 
+}
+.table th {
+	font-weight: bold;
+	padding: 5px;
+	border: 1px solid var(--outline);
+}
+.table td {
+	border: 1px solid var(--outline);
+	padding: 5px;
+}
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    filter: opacity(0.4);
+}

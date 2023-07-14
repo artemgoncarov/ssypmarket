@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <link rel="stylesheet" href="./el.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="products">
+        <div class="product">
+            <div class="name">Товар 1</div>
+            <img class="img", src="/day4/public/bulochki.jpg" alt="">
+            <div class="price"> 70.5 руб. </div>
+            <button class="btn">  Купить </button>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        let json = '[{"name":"Шоколад","img":"shokolad.jpg","price":70.5},{"name":"Кофе","img":"kofe.jpg","price":15},{"name":"Вода","img":"water.jpg","price":26},{"name":"Булочка","img":"bulochki.jpg","price":35}]';
+        json = JSON.parse(json);
+        let product = document.querySelector('.product');
+        let products = document.querySelector('.products');
+        let corzina = new Array;
+        for (i in json) {
+            let newProduct = product.cloneNode(true);
+            newProduct.querySelector(".name").innerText = json[i].name;
+            newProduct.querySelector(".img").setAttribute('src', '/day4/public/'+json[i].img);
+            newProduct.querySelector(".price").innerText = json[i].price;
+            newProduct.querySelector(".btn").innerText = "Купить";
+            let y = newProduct.querySelector(".btn");
+            y.addEventListener('click', (event) => {alert("Товар " +  newProduct.querySelector(".name").innerText + " добавлен в корзину, приятного аппетита") && localStorage.getItem(newProduct.querySelector(".name").innerText)});
+            products.appendChild(newProduct);
+            
+            
+
+        }
+        product.style.display = 'none';
+        Api.post('./public/json/products.json').then((data) => { 
+             new ProductsComponent(document.body, data);
+         })
+
+
+        /*class CartItem {
+            #quntity
+            set quntity(q) {
+                if (q < 1) {
+                    this.#quntity = 1;
+                }
+                else {
+                    this.#quntity = q;
+                }
+            }
+            get quntity() {
+                return this.#quntity;
+            }
+        }
+        class Person {
+            #name
+            #famile
+            #computer
+
+            constructor(name) {
+                this.name = name;
+
+            }
+            get name() {
+                return this.#name;
+            }
+            set famile(q) {
+
+                this.#famile = q;
+
+            }
+            get famile() {
+                return this.#famile;
+            }
+            set computer(q) {
+                this.#computer = q;
+
+            }
+            get computer() {
+                return this.#computer;
+            }
+        }
+        */
+       // let t = JSON.parse(json);
+        
+        /*console.log(t.filter((el) => {return (el.name.indexOf("к") + 1) || (el.name.indexOf("К") + 1)}));*/
+        
+        
+        /*let op = {name:"Alex", age:19};
+        let r = {name:"Ron", age:14};
+        let t = new Array(op, r);
+        t = JSON.stringify(t);
+        console.log(t);*/
+        //window.setInterval(() => {console.log("Hello")}, 3000);
+        //window.setInterval(() => {console.log("Word")}, 1000);
+        //  
+        //hello();
+        
+
+
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

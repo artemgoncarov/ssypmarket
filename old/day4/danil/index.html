@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <link rel="stylesheet" href="./el.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class = "list_of_products">
+        <div class="product">
+            
+            <div class = "name">Товар 1</div>
+            <img src="/day4/public/bulochki.jpg" alt="" class="img">
+            <div class = "cost">1000 руб.</div>
+            <div class = "buy">Купить</div>
+        </div>
+        
+    </div>
+
+    
+    
+    
+    
+    <script>
+        let json = '[{"name":"Шоколад","img":"shokolad.jpg","price":70.5},{"name":"Кофе","img":"kofe.jpg","price":15},{"name":"Вода","img":"water.jpg","price":26},{"name":"Булочка","img":"bulochki.jpg","price":35}]';
+        let o = JSON.parse(json);
+        let list_of_products = document.querySelector('.list_of_products');
+        let product = document.querySelector('.product'); 
+        let product2; 
+        let r = [];
+        let summa = [];
+        let storage = localStorage;
+        let item = [];
+        let cart;
+        localStorage.getItem("cart");
+        for(let i in o){
+            product2 = product.cloneNode(true);
+            product2.querySelector('.name').innerText = o[i].name; 
+            product2.querySelector('.cost').innerText = o[i].price + " руб.";
+            product2.querySelector('.img').src = "/day4/public/" + o[i].img;
+            list_of_products.appendChild(product2);
+            r.push(product2);
+            r[i].addEventListener(
+                'click',(event)=>{
+                    cart = JSON.stringify(o[i]);
+                    item.push(t);
+                    if(localStorage.getItem("cart") === null){
+                        cart = [];
+                    }else if(localStorage.getItem("cart") === JSON){
+                        cart = parse(localStorage.getItem("cart"));
+                    }
+                    console.log(localStorage);
+                    storage = localStorage;
+                }
+            );
+            r[i].addEventListener(
+                'mouseover',(event)=>{
+                    console.log( " storage: " + storage);
+                }
+            )
+            r[i].addEventListener(
+                'keypress',(event)=>{
+                    console.log(o[i].price);
+                }
+            )
+        }
+        product.style.display ='none';
+        console.log();
+        
+        // r[0].addEventListener(
+        //     'mousemove',(event)=>{
+        //         console.log(o[0].name);
+        //     }
+        // )
+        
+        // o.filter((el) =>  {
+        //     return el.name.indexOf("ч")!==-1 || el.name.indexOf("н")!==-1;
+        // }).forEach(el => {
+        //     console.log(el.name,el.price);
+        // });
+        
+        // //Писать здесь.
+        // class CartItem {
+                // #quantity
+                // constructor(quan){
+                        // this.#quantity = quan;
+                    // }
+                    // set quantity(q){
+                            // if(q<1){
+                                    // console.log("Are you stupid?");
+                                    // this.#quantity = 1;
+                                // }
+                                // else{
+                                        // this.#quantity = q;
+                                    // }
+                                // }
+                                // get quantity(){
+                                        // return this.#quantity;
+                                    // }
+                                // }
+                                // let q = new CartItem(1);
+                                // console.log(q.quantity);
+                                // q.quantity = -100;
+                                // console.log(q.quantity);
+        // class Person{
+            // name
+            // constructor(name){
+                // this.name = name;
+            // }
+            // get getName(){
+                // return this.#name;
+            // }
+        // }
+        // let p = new Person("loh");
+        // console.log(p.getName);
+        // let o = [ new Person("kal1"),new Person("loh1"),new Person("kal2"),new Person("loh2"),new Person("kal3"),new Person("loh3")]
+        // let json_o = JSON.stringify(o);
+        // console.log(o);
+        // console.log(json_o);
+            // setInterval(function(){
+            //     console.log("Hello")
+            // },1);
+            // setInterval(function(){
+            //     console.log("World!")
+            // },1);
+        
+        
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+body {
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  main {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+  }
+  
+  h1, h2, h3 {
+    text-align: center;
+  }
+  
+  .product {
+    text-align: center;
+  }
+  
+  .cart {
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 32px;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }

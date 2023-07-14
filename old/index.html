@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <link rel="stylesheet" href="./public/css/atomic.css" />
+    <link rel="stylesheet" href="./public/css/elements.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container" style="margin-top: 70px; max-width: 700px;">
+        <div class="text-2 text-center">
+            <div class="text-3 mb-2  text-bold">Hello World!</div>
+            <div class="mb-1">Мы 8-ая Мастерская "ЛШЮП Маркет".</div>
+            <div>До запуска примерно осталось:</div>
+            <div class="text-3 time mb-2"></div>
+            <img src="./public/img/img1.jpg" class="w-100 radius" alt="">
+        </div>
+    </div>
+    
+    <style>
+
+    </style>
+
+    <script>
+        function addzero(num) {
+            res = num.toString();
+            if (res.length == 1) {
+                res = "0" + res;
+            }
+            return res;
+        }
+        function update() {
+            time = new Date(new Date("July, 15, 2023").getTime() - new Date().getTime());
+            day = time.getDate() - 1;
+            hour = addzero(time.getHours());
+            minute = addzero(time.getMinutes());
+            second = addzero(time.getSeconds());
+            document.getElementsByClassName("time")[0].textContent = day + "д. " + hour + ":" + minute + ":" + second;
+        }
+        setInterval(update, 10);
+    </script>
+</body>

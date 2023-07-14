@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+</head>
+
+<body>
+    <script>
+        /*let spis = {name:"alexandr", age:18, surname : "true", hobby:"besketball"};
+        for (i in spis) {
+            if (i == 'name') {
+                console.log("Имя:" + spis[i]);
+            }
+            else if (i == 'age') {
+                console.log("Возраст:" + spis[i]);
+            }
+            else if (i == 'surname') {
+                console.log("Фамилия::" + spis[i]);
+            }
+            else {
+                console.log("Хобби:" + spis[i]);
+            }
+        }*/
+
+        /* function Programmers(languages) {
+            this.languages = languages;
+           
+            this.knownLang = function(lang) {
+                for (let i = 0; i < this.languages.length; ++i) {
+                    if (lang == this.languages[i]) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            
+        }
+        let org = new Programmers([1, 2, 3, 4, 5]);
+        console.log(org.knownLang(1));*/
+        /*function displayArray() {
+            Array.call(this);
+            this.display = function() {
+                console.log(this);
+            }
+        }
+        Array.prototype.push = Array.prototype.push;
+        Array.prototype.display = function() {
+            console.log(this);
+        };*/
+
+        /*function display() {
+            console.log(this);
+        }
+        let f = display.bind({name : "Alex", age : 18});
+        display();
+        f();*/
+        /*function u() {
+            return 1 + 2;
+        }
+
+        console.log(typeof u);
+        */
+        class Person {
+            constructor (name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            display() {
+                console.log(this);
+            }
+        }
+        
+        class User extends Person {
+            constructor (name, age, login) {
+                super(name, age);
+                this.login = login;
+            }
+            display() {
+                super.display();
+                console.log("Test")
+            }
+        }
+        class tr extends Person {
+            constructor (name, age, login) {
+                super(name, age);
+                this.login = login;
+            }
+            static test() {
+                console.log("test");
+            }
+        }
+        tr.test();
+        
+        
+        </script>
+</body>
+
+</html>

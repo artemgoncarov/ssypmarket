@@ -1,0 +1,150 @@
+/*-----------------------------------
+MODAL
+------------------------------ */
+.modal {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    z-index: 10650;
+}
+.modal > div {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-height: 98%;
+}
+
+
+/*-----------------------------------
+INPUTS
+------------------------------ */
+.input {
+    position: relative;
+}
+.input input {
+    width: 100%;
+}
+.input label {
+    position: absolute;
+    bottom: 3px;
+    left: 10px;
+    padding: 0 5px;
+    background-color: var(--background);
+    border-radius: 3px;
+    font-size: 0.9rem !important;
+    color: var(--outline) !important;
+    transition: 0.2s;
+    pointer-events: none;
+}
+.input input:focus ~ label{
+    bottom: 25px;
+    color: var(--primary)!important;
+    font-size: 0.8rem !important;
+}
+.input input{
+    padding: 0 15px !important;
+    height: 40px !important;
+    font-size: 0.9rem !important;
+    color: var(--on-background) !important;
+    border: 1px solid var(--outline)!important;
+    border-radius: 10px!important;
+}
+.input input:focus, .input input:active{
+    outline: 0;
+    box-shadow: none !important;
+    border: 1px solid var(--pu-primary)!important;
+}
+.input input:not(:placeholder-shown) ~ label {
+    color: var(--outline)!important;
+    bottom: 25px;
+    font-size: 0.8rem !important;
+}
+.input input:not(:placeholder-shown)  {
+    background-color: var(--background)!important;
+}
+
+
+/*-----------------------------------
+BUTTON
+------------------------------ */
+.b-1, .b-2, .b-3 {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none!important;
+    border-radius: 10px!important;
+    cursor: pointer;
+    user-select: none;
+    transition: all 200ms ease-in-out;
+    border: 1px solid transparent;
+}
+.b-1:focus, .b-2:focus, .b-3:focus,
+.b-1:focus-visible, .b-2:focus-visible, .b-3:focus-visible {
+    outline: none!important;
+}
+.b-1 {
+    font-size: var(--text-1)!important;
+    padding: calc(0.5*var(--text-1)) calc(var(--text-1) + 5px);
+}
+.b-2 {
+    font-size: var(--text-2)!important;
+    padding: calc(0.5*var(--text-2)) calc(var(--text-2) + 5px);
+}
+.b-3 {
+    font-size: var(--text-3)!important;
+    padding: calc(0.5*var(--text-3)) calc(var(--text-3) + 5px);
+}
+.b-success {
+    pointer-events: none!important;
+    cursor: auto!important;
+    background-color: var(--success)!important;
+    color: var(--on-success)!important;
+    border: 1px solid var(--success)!important;
+}
+.b-primary {
+    background-color: var(--primary)!important;
+    color: var(--on-primary)!important;
+    border: 1px solid var(--primary)!important;
+}
+.b-primary:hover{
+    box-shadow: #ef891787 0 3px 4px 0;
+}
+.b-outline:hover{
+    box-shadow: #00000029 0 3px 4px 0;
+}
+.b-secondary:hover{
+    box-shadow: rgba(0, 0, 0, 0.53) 0 3px 4px 0;
+}
+.b-tertiary:hover{
+    box-shadow: rgba(6, 132, 146, 0.46) 0 3px 4px 0;
+}
+.b-1:active, .b-2:active, .b-3:active {
+    box-shadow: inset #0000002e 5px 5px 15px 0px!important;
+    border: 1px solid #0000002e!important;
+    outline: none;
+}
+.b-secondary {
+    background-color: var(--secondary)!important;
+    color: var(--on-primary)!important;
+    border: 1px solid var(--secondary)!important;
+}
+.b-tertiary {
+    background-color: var(--tertiary)!important;
+    color: var(--on-tertiary)!important;
+    border: 1px solid var(--tertiary)!important;
+}
+.b-outline {
+    background-color: var(--background)!important;
+    color: var(--on-background)!important;
+    border: 1px solid var(--outline)!important;
+}
+
+

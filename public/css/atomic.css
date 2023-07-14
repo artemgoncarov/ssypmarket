@@ -1,0 +1,345 @@
+:root { --primary: #255ea6; }
+:root { --on-primary: #ffffff; }
+:root { --secondary: #005ac4; }
+:root { --on-secondary: #ffffff; }
+:root { --tertiary: #6f5675; }
+:root { --on-tertiary: #ffffff; }
+:root { --background: #ffffff; }
+:root { --on-background: #1a1c1e; }
+:root { --outline: #74777f; }
+:root { --primary-container: #d5e3ff; }
+:root { --on-primary-container: #001b3c; }
+:root { --secondary-container: #d8e2ff; }
+:root { --on-secondary-container: #001a42; }
+:root { --tertiary-container: #f8d8fe; }
+:root { --on-tertiary-container: #28132f; }
+:root {--green1: #006400; }
+
+:root { --size-0: 0; }
+:root { --size-1: 1rem; }
+:root { --size-2: 2rem; }
+:root { --size-3: 3rem; }
+
+:root { --text-1: 1rem; }
+:root { --text-2: 2rem; }
+:root { --text-3: 3rem; }
+
+:root { --radius: 1rem; }
+
+html  {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    html  {
+        font-size: 16px;
+    }
+}
+
+body {
+    max-width: 100%;
+}
+
+h1,h2,h3,p {
+    margin: 0;
+}
+
+.shadow {
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.07);
+}
+.relative {
+    position: relative;
+}
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.flex-column {
+    height: 100%;
+    flex-direction: column;
+}
+.row-2{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.row-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.row-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (min-width: 768px) {
+    .span-1 {
+        grid-column: span 1 / span 1;
+    }
+    .span-2 {
+        grid-column: span 2 / span 2;
+    }
+    .span-3 {
+        grid-column: span 3 / span 3;
+    }
+    .span-4 {
+        grid-column: span 4 / span 5;
+    }
+}
+@media (max-width: 767px) {
+    .mob-span-1 {
+        grid-column: span 1 / span 1;
+    }
+    .mob-span-2 {
+        grid-column: span 2 / span 2;
+    }
+    .mob-span-3 {
+        grid-column: span 3 / span 3;
+    }
+    .mob-span-4 {
+        grid-column: span 4 / span 5;
+    }
+}
+
+.g-1 {
+    gap: var(--size-1);
+}
+.g-2 {
+    gap: var(--size-2);
+}
+.g-3 {
+    gap: var(--size-3);
+}
+
+
+.justify-end {
+    justify-content: flex-end;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-end {
+    align-items: flex-end;
+}
+.items-center {
+    align-items: center;
+}
+
+.pl-1, .px-1, .p-1 {
+    padding-left: var(--size-1);
+}
+.pl-2, .px-2, .p-2 {
+    padding-left: var(--size-2);
+}
+.pl-3, .px-3, .p-3 {
+    padding-left: var(--size-3);
+}
+.pr-1, .px-1, .p-1 {
+    padding-right: var(--size-1);
+}
+.pr-2, .px-2, .p-2 {
+    padding-right: var(--size-2);
+}
+.pr-3, .px-3, .p-3 {
+    padding-right: var(--size-3);
+}
+.pt-1, .py-1, .p-1 {
+    padding-top: var(--size-1);
+}
+.pt-2, .py-2, .p-2 {
+    padding-top: var(--size-2);
+}
+.pt-3, .py-3, .p-3 {
+    padding-top: var(--size-3);
+}
+.pb-1, .py-1, .p-1 {
+    padding-bottom: var(--size-1);
+}
+.pb-2, .py-2, .p-2 {
+    padding-bottom: var(--size-2);
+}
+.pb-3, .py-3, .p-3 {
+    padding-bottom: var(--size-3);
+}
+
+.ml-1, .mx-1, .m-1 {
+    margin-left: var(--size-1);
+}
+.ml-2, .mx-2, .m-2 {
+    margin-left: var(--size-2);
+}
+.ml-3, .mx-3, .m-3 {
+    margin-left: var(--size-3);
+}
+.mr-1, .mx-1, .m-1 {
+    margin-right: var(--size-1);
+}
+.mr-2, .mx-2, .m-2 {
+    margin-right: var(--size-2);
+}
+.mr-3, .mx-3, .m-3 {
+    margin-right: var(--size-3);
+}
+.mt-1, .my-1, .m-1 {
+    margin-top: var(--size-1);
+}
+.mt-2, .my-2, .m-2 {
+    margin-top: var(--size-2);
+}
+.mt-3, .my-3, .m-3 {
+    margin-top: var(--size-3);
+}
+.mb-1, .my-1, .m-1 {
+    margin-bottom: var(--size-1);
+}
+.mb-2, .my-2, .m-2 {
+    margin-bottom: var(--size-2);
+}
+.mb-3, .my-3, .m-3 {
+    margin-bottom: var(--size-3);
+}
+
+
+.w-100 {
+    max-width: 100%; 
+}
+.w-300 {
+    width: 300px;
+}
+.w-400 {
+    max-width: 400px;
+    width: 100%;
+}
+.h-100 {
+    height: 100%;
+}
+.w-auto {
+    width: auto;
+}
+.h-auto {
+    height: auto;
+}
+
+.text-1 {
+    font-size: var(--text-1);
+}
+.text-1-5 {
+    font-size: 1.5rem;
+}
+.text-2 {
+    font-size: var(--text-2);
+}
+.text-3 {
+    font-size: var(--text-3);
+}
+.text-bold {
+    font-weight: 600;
+}
+.text-not {
+    color: var(--on-primary-container);
+}
+.text-lh {
+    line-height: 1.25rem;
+}
+.text-center {
+    text-align: center;
+}
+.text-primary {
+    color: var(--primary);
+}
+.text-secondary {
+    color: var(--secondary);
+}
+
+a {
+    text-decoration: none;
+}
+
+.bg-primary {
+    color: var(--on-primary);
+    background: var(--primary);
+}
+.bg-primary-container {
+    color: var(--on-primary-container);
+    background: var(--primary-container);
+}
+.bg-secondary {
+    color: var(--on-secondary);
+    background: var(--secondary);
+}
+.bg-secondary-container {
+    color: var(--on-secondary-container);
+    background: var(--secondary-container);
+}
+.bg {
+    color: var(--on-background);
+    background: var(--background);
+}
+.bg-g {
+    background: var(--green1);
+}
+.radius {
+    border-radius: var(--radius);
+}
+.round {
+    border-radius: 9999px;
+}
+.border {
+    border: 1px solid var(--outline);
+}
+.none {
+    display: none;
+}
+.block {
+    display: block;
+}
+.active {
+    cursor: pointer;
+    user-select: none;
+}
+.active:hover {
+    filter: opacity(0.8);
+    text-decoration: none;
+}
+.inline-block {
+    display: inline-block;
+}
+.float-right {
+    float: right;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+@media (min-width: 768px) {
+    .not-mob {
+        display: block;
+    }
+    .mob {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    .not-mob {
+        display: none;
+    }
+    .mob {
+        display: block;
+    }
+}
+body { 
+    font-family: 'Inter', sans-serif;
+}
+body *::placeholder { 
+    font-family: 'Inter', sans-serif;
+}
+#content {
+    padding-top: 7rem; padding-bottom: 7rem; 
+}

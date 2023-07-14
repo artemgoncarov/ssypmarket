@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+</head>
+
+<body>
+    <script>
+//for( let i=0; i<100; i++) {
+    //if(i % 3 === 0) {
+        //console.log(i);
+    //}
+//}
+//let person= {
+//    name :"Ильнара",
+//    age :"13 лет",
+//    }
+//for (let i in person){
+//    console.log( person[i]);
+//}
+//function Programmer(languages) {
+//    this.languages = languages;
+//    this.knownLang = function(lang) {
+//        for( i in this.languages){
+//            if(this.languages[i]===lang) {
+//                console.log(this.languages[i]);
+//                return true;
+//            }
+//        }
+//        return false;
+//
+//    }
+//}
+//let p = new Programmer(['c++','JavaSkript','Python']);
+//console.log(p.knownLang('JavaSkript'));
+class Person {
+    constructor(name, age){
+        this.name=name;
+        this.age=age;
+    }
+    display(){
+        console.log(this);
+    }
+}
+let p = new Person ("Ilnara", 13);
+//p.display(); 
+class User extends Person{
+    constructor (name,age,login){
+        super(name,age);
+        this.login=login;
+    }
+    display(){
+        super.display();
+        console.log("test");
+    }
+}
+
+
+    </script> 
+</body>
+</html>

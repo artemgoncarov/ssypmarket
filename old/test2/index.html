@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <!-- <link rel="stylesheet" href="./public/elements.css&v=1" /> -->
+    <!-- <link rel="stylesheet" href=".atomic.css" /> -->
+    <!-- <link rel="stylesheet" href=".puplic/elements.css" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+    <input type="text" class="input">
+    <div class = "btn textarea"> OK  </div>
+   
+    <script>
+        let a = 0;
+        let r = document.querySelector('.btn');
+        r.addEventListener(
+            'click', (event) =>{
+                a=document.querySelector('.input');
+                console.log(a);
+            }
+        )
+
+    </script>
+
+    <style>
+        .textarea {
+            font-size: 3rem;    
+        }
+    </style>
+</body>

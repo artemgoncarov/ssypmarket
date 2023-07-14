@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>ЛШЮП маркет</title>
+        <link rel="stylesheet" href="./public/css/style.css" />
+        <script src="/public/js/products.js"></script>
+        <script src="https://kit.fontawesome.com/7e9ca6307f.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: antiquewhite;
+            }
+            .flex {
+                    display: flex;
+            }
+            .flex-col {
+                flex-direction: column;
+            }   
+            .align-center {
+                align-items: center;
+            }
+            .justify-center { 
+                justify-content: center;
+            } 
+            .button {
+                cursor : pointer;
+            } 
+            </style>
+    </head> 
+    
+    <body>
+        <div class="flex justify-center">
+            <div class="flex container flex-col">
+            <h1> ЛШЮП Маркет </h1>
+            <div> </div><p> В нашем магазине вы можете купить много интересного, по оптимальной цене 
+            <p> Например новые наушники Pro_max2023_4867, или же новый монитор с логотипом </p>
+            <p> нашей компании. Поставьте лайк, если вам понравился ассортимент. </p> 
+            <p> Но перед этим пройдите регестрацию: </p>
+            <form>
+                Имя: <input type = "text" name = "firstname" value = "Введите имя" placeholder="ddd"> <br> <br>
+                Фамилия: <input type = "text" name = "lastname" value = "Введите фамилию"> <br> <br>
+                Мужчина </a> <input type = "radio" name = "sex" value = "male">
+                Женщина <input type = "radio" name = "sex" value = "female"> <br>
+                Ваш возраст: <br>
+                <input type = "radio" name = "type1" value = "low">Меньше 18<br>
+                <input type = "radio" name = "type2" value = "2old">От 18 до 35<br>
+                <input type = "radio" name = "type3" value = "high">Больше 35<br>
+                <br>
+
+            </form>
+            <img src = "https://cdn-edge.kwork.ru/pics/t3/06/21370275-1655928306.jpg">
+            <br>
+             <input class = "button" type = "submit" name = "submit" value = "нравится">
+            
+        </div>
+
+    </body>
+        
+</html>

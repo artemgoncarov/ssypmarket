@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <link rel="stylesheet" href="./el.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="finishButton">Завершить покупки</div>
+    <template>
+        <div class="cardList">
+            <div class="card">
+                <div class="cardName" style="border:5px">Товар 1</div>
+                <img class="cardImage"src="/day4/public/bulochki.jpg" alt="">
+                <div class="cardPrice">1000 руб.</div>
+                <div class="cardButton" style="border: 5px; background-color: red;">Купить</div>
+            </div>
+        </div>
+    </template>
+
+
+
+
+    <script>
+        let json = '[{"name":"Шоколад","img":"shokolad.jpg","price":70.5},{"name":"Кофе","img":"kofe.jpg","price":15},{"name":"Вода","img":"water.jpg","price":26},{"name":"Булочка","img":"bulochki.jpg","price":35}]';
+        let jsObj = JSON.parse(json);
+        // for (i of jsObj){
+        //     console.log(i.name);
+        // }
+        // console.log(jsObj.filter((obj) => {return ((obj.name.indexOf("К") > -1) || (obj.name.indexOf("к") > -1))}));       
+    </script>
+    <script src="./script.js?v=49"></script>
+</body>
+
+</html>

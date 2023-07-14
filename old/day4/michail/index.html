@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <link rel="stylesheet" href="./el.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class='products'>
+        <div class='product'>
+            <div class='name'>Товар 1</div>
+            <img class='img' src="/day4/public/bulochki.jpg" alt="">
+            <div class='price'>1000 руб.</div>
+            <button class="bth">Купить</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        let json = '[{"name":"Шоколад","img":"shokolad.jpg","price":70.5},{"name":"Кофе","img":"kofe.jpg","price":15},{"name":"Вода","img":"water.jpg","price":26},{"name":"Булочка","img":"bulochki.jpg","price":35}]';
+        json = JSON.parse(json);
+
+        let product = document.querySelector('.product');
+        let products = document.querySelector('.products');
+
+        for (i in json) {
+            let Newproduct = product.cloneNode(true);
+            products.appendChild(Newproduct);
+            Newproduct.querySelector('.name').innerText = json[i].name;
+            Newproduct.querySelector('.img').setAttribute('src', '/day4/public/' + json[i].img);
+            Newproduct.querySelector('.price').innerText = json[i].price;
+            Newproduct.querySelector('.bth').innerText = "Купить";
+            Newproduct.querySelector('.bth').addEventListener("click", (event) => {
+                alert("вы добавили в карзину " + Newproduct.querySelector('.name').innerText);
+                if (localStorage.getItem() === "null") {
+
+                }
+            });
+        }
+
+        product.style.display = 'none';
+    </script>
+</body>
+
+</html>

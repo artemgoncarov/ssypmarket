@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+</head>
+<body>
+    <button onclick="" >Кнопка 1</button><br>
+    <p name="text1"></p><br>
+
+    <style>
+        
+    </style>
+
+    <script>
+        let r = {
+            print(x){console.log(x);},
+            map(arr, fun){let res=[]; for (i of arr){res.push(fun(i));}return res;},
+            range(min, max, step=1){let res=[]; for (i=min; i<max; i+=step){res.push(i);} return res;},
+            changetext(name, text){document.getElementsByName(name)[0].textContent = text;},
+        };
+        class Person{
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            display() {
+                r.print(this);
+            }
+        };
+        class User extends Person {
+            constructor(name, age, login) {
+                super(name, age);
+                this.login = login;
+            }
+            display() {
+                super.display()
+            }
+        };
+        class Admin extends User {
+            constructor(name, age, login, admin_level) {
+                super(name, age, login);
+                this.admin_level = admin_level;
+            }
+            display() {
+                super.display();
+            }
+        }
+        a = new Admin("Родослав", 13, "Valsodor", 5);
+        a.display();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <link rel="stylesheet" href="./el.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="magaz">
+        <div class="tovar">
+            <div class="name">Булочка</div>
+            <img class="img" src="/day4/public/Kofe.jpg" alt="">
+            <div class="price">1000 руб.</div>
+            <!--<div class="buy">Купить</div>-->
+        </div>
+    </div>
+    <br><br><br><p name="text1"></p>
+
+    <style>
+        body {
+            background-color: bisque;
+        }
+        .tovar {
+            padding: 25px;
+            margin: 25px;
+            border: 1px solid black;
+            width: 400px;
+            box-shadow: 8px 8px 5px black;
+            background-color: azure;
+            cursor:pointer;
+        }
+    </style>
+
+    <script>
+        let r = {
+            print(x){console.log(x);},
+            range(min, max, step=1){let res=[]; for (i=min; i<max; i+=step){res.push(i);} return res;},
+            changetext(name, text){document.getElementsByName(name)[0].textContent = text;},
+        };
+        let json = '[{"name":"Шоколад","img":"shokolad.jpg","price":70.5},{"name":"Кофе","img":"kofe.jpg","price":15},{"name":"Вода","img":"water.jpg","price":26},{"name":"Булочка","img":"bulochki.jpg","price":35}]';
+        let noMoreJson = JSON.parse(json);
+        
+        
+        let elemOld = document.querySelector('.tovar');
+        let parent = document.querySelector('.magaz');
+        let elem = parent.querySelector('.tovar');
+        for (i in r.range(0, noMoreJson.length)) {
+            clone = elem.cloneNode(true);
+            tovar_name = clone.querySelector(".name")
+            tovar_name.innerText = noMoreJson[i].name;
+            tovar_img = clone.querySelector(".img")
+            tovar_img.setAttribute("src", "/day4/public/"+noMoreJson[i].img);
+            tovar_price = clone.querySelector(".price")
+            tovar_price.innerText = noMoreJson[i].price+" руб.";
+            parent.appendChild(clone);
+            clone.addEventListener("click", event => {alert('Товар "'+noMoreJson[i].name+'" был добавлен в корзину.')});
+        }
+        elemOld.style.display = 'none';
+
+
+        //el.addEventListener("click", event => {return 1;});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+</head>
+
+<body>
+    <script>
+        let person = {
+            name: "Лиза",
+            age: "14 лет"
+        }
+        for (let i in person) {
+            //console.log(person[i]);
+        }
+        function Programmer(languages) {
+            this.languages = languages;
+            this.knownLang = function(u) {
+                let r = 0;
+                for (i in this.languages) {
+                    if (u == this.languages[i]) 
+                     return true;
+                }
+                return false;
+            }
+        }
+        //let a = new Programmer(["python", "c++", "js"]);
+        //console.log(a.knownLang("js"));
+        let a = new Array();
+        //Array.prototype.display = function display() 
+        {
+            //console.log(this);
+        }
+        a = [4, 5, 6]
+        //a.display.call([1, 2, 3]);
+
+        function DisplayArray() {
+            this.display = function() {
+                console.log(this);
+            }
+            Array.call(this);
+        }
+        DisplayArray.prototype.push = Array.prototype.push;
+        let da = new DisplayArray();
+        //da.push(7);
+        //da.display();
+        //console.log(a.display([1, 2, 3, 4]));
+        function l() {
+            //console.log(this);
+        }
+        //l();
+        //f = l.bind("Hello, Liza!");
+        //f();
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            display ()  {
+                console.log(this); }
+        }
+        let p = new Person ("Liza", 14);
+        //p.display();
+        class User extends Person {
+            constructor (name, age, login) {
+                super(name, age);
+                this.login = login;
+            }
+            static test () {
+                console.log("Hello");
+            }
+        }
+        let e = new User("Liza", 14, "01112008");
+        e.display();
+        User.test();
+    </script>
+</body>
+</html>

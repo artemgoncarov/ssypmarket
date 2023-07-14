@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+</head>
+
+<body>
+    <script>
+        //let a = "Hello,\n  \"World!\"";
+        //let a;
+        //alert(a);
+        //let person = {
+        //name: "Alex",
+        //age: 18
+        //};
+        //console.log(person.age);
+        //let a = "qwerty";
+        //console.log(typeof a);
+        //a = 14;
+        //console.log("5" + 2);
+        //vklad = parseFloat(prompt("Сумма вклада:"));
+        //procent = parseFloat(prompt("Процентная ставка"));
+        //summa = vklad * (procent / 100) + vklad;
+        //alert("Сумма после начисления процентов: " + summa);
+        //for (let i = 0; i <= 100; i ++) {
+        //if (i % 2 === 0) {
+        //console.log(i); }
+        //}
+        function sqrt(s) {
+            s = parseFloat(s);
+            return s * s;
+        }
+        function map(m, fun) {
+            w = [];
+            for (i in m) {
+                w.push(sqrt(m[i]));
+            }
+            return w;
+        }
+        function ch(n) {
+            return (n % 2 == 0);
+        }
+        function filtr(w, fun) {
+            e = [];
+            for (i in w) {
+                if (fun(w[i])) {
+                    e.push(w[i]);
+                }
+            }
+            return e;
+        }
+        let sum = function (a, b) {
+            return a + b;
+        }
+        let mul = function (a, b) {
+            return a * b;
+        }
+        function menu(n, a, b) {
+            if (n == 1) {
+                return function (a, b) {
+                    return a + b;
+                }
+            }
+            else if (n == 2) {
+                return function (a, b) {
+                    return a * b;
+                }
+            }
+            return undefind;
+        }
+        let r = (function() {
+            let a = 1;
+            return {
+                inc: function() {
+                    a++;
+                },
+                dec: function() {
+                    a--; 
+                }, 
+                print: function() {
+                    console.log(a);
+                }
+            }
+        })();
+        function ct(h) {
+            if (h == 1) {
+                return 1;
+            }
+            return ct(h - 1) * h;
+            }
+            let a = {
+                name: "Liza"
+            }
+            function cn(b, s) {
+                b.name = s;
+            }
+            cn(a, "Anton");{
+                if (a.price < b.price) {
+                    return "-1";
+                }
+                else if (a.price == b.price) {
+                    return "0";
+                }
+                else if(a.price > b.price) {
+                    return "1";
+                }
+            }
+            function usort(arr, fun) {
+                for (i in arr) {
+                    
+                }
+            }
+    </script>
+</body>
+</html>

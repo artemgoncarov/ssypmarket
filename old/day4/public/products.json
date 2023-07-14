@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Шоколад с орехи",
+        "img": "shokolad.jpg",
+        "price": 70.5
+    },
+    {
+        "name": "Кофе в зернах",
+        "img": "kofe.jpg",
+        "price": 15
+    },
+    {
+        "name": "Вода с газом",
+        "img": "water.jpg",
+        "price": 26
+    },
+    {
+        "name": "Булочка с маком",
+        "img": "bulochki.jpg",
+        "price": 35
+    }
+] 

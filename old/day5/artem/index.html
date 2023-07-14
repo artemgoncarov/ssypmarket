@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ЛШЮП маркет</title>
+    <link rel="stylesheet" href="./el.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script>
+        let storage = {
+            save: function (name) {
+                localStorage.setItem(name, JSON.stringify(this));
+            },
+            load: function (name) {
+                if (localStorage.getItem(name, this) !== null) {
+                    let t = JSON.parse(localStorage.getItem(name, this));
+                    for (i in t) {
+                        this[i] = t[i];
+                    }
+                }
+            }
+        }
+        let cartStorage = {
+            items: [],
+            ...storage,
+            add_to_buy: function (id) {
+                let isAccept = confirm("Добавить товар в корзину?");
+                if (isAccept === true) {
+                    if (!this.items.includes(id)) {
+                        storage.load("cart");
+                        this.items.push(id);
+                        storage.save("cart");
+                        location.href = "#";
+                    }
+                }
+            }
+        }
+
+        class Api {
+            static post(url, obj = {}) {
+                return new Promise((resolve) => {
+                    let x = new XMLHttpRequest;
+                    x.open('post', url, true);
+                    x.setRequestHeader('Content-Type', 'json');
+                    x.send(obj);
+                    x.addEventListener('load', () => {
+                        if (x.status < 400 && x.status >= 200) {
+                            resolve(JSON.parse(x.responseText));
+                        }
+                        else {
+                            console.log("Error");
+                        };
+                    });
+                })
+
+
+            };
+        }
+
+
+        Api.post("https://auzubarev.ru/day5/artem/public/json/products.json").then((data) => { console.log(data) });
+    </script>
+    <div class="card_template">
+        <div class="flex justify-center">
+            <div class="flex container flex-col">
+                <div class="flex justify-center">
+                    <template class="cards">
+                        <div class="cardlist">
+                            <div class="card">
+                                <div class="name">Товар 1</div>
+                                <img src="/day4/public/bulochki.jpg" alt="" class="image">
+                                <div class="price">1000 руб.</div>
+                                <div class="basket">Товар в корзине</div>
+                                <div class="flex justify-center">
+                                    <button class="gradient-button"
+                                        onclick="cartStorage.add_to_buy('хлеб')">Купить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        class Component {
+            createElementByTemplate(selector) {
+                return document.querySelector(selector).content.cloneNode(true);
+            }
+        }
+
+        class ProductsComponent extends Component {
+            #products;
+            #rootElement;
+            constructor(parentElement, products) {
+                super();
+                this.#rootElement = this.createElementByTemplate('.cardtemplate');
+                this.#products = products;
+                products.forEach((el) => {
+                    new ProductComponent(this.#rootElement.querySelector('.cards'), el);
+                });
+                parentElement.appendChild(this.#rootElement);
+            }
+        }
+
+        class ProductComponent extends Component {
+            #product;
+            #rootElement;
+            #nameElement;
+            #imgElement;
+            #priceElement;
+            #buttonElement;
+            #korzElement;
+            constructor(parentElement, product) {
+                super();
+                this.#rootElement = this.createElementByTemplate('.card');
+                this.#product = product;
+                this.#nameElement = this.#rootElement.querySelector(".name");
+                this.#korzElement = this.#rootElement.querySelector(".basket");
+                this.#buttonElement = this.#rootElement.querySelector(".button");
+                this.#imgElement = this.#rootElement.querySelector(".img");
+                this.#priceElement = this.#rootElement.querySelector(".price");
+                this.#nameElement.innerText = this.#product.name;
+                this.#imgElement.setAttribute("src", "/day4/public/" + this.#product.img);
+                this.#priceElement.innerText = this.#product.price;
+                this.#buttonElement.addEventListener("click", () => { this.addToCart() });
+                this.#korzElement.style.display = 'none';
+                //product.forEach((el) => {
+                //    new ProductComponent(this.#rootElement.querySelector('.js-product-card'), el);
+                //});
+                parentElement.appendChild(this.#rootElement);
+            }
+            addToCart() {
+                cartStorage.add(this.#product.id);
+                if ("click") {
+                    this.#buttonElement.style.display = 'none';
+                    this.#korzElement.style.display = 'block';
+                }
+            }
+        }
+
+        Api.post('./public/json/products.json').then((data) => {
+            new ProductsComponent(document.body, data);
+        });
+    </script>
+</body>
+
+</html>
